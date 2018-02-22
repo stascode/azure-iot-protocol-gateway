@@ -1,0 +1,34 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: pgw
+  labels:
+    app: pgw
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pgw
+  template:
+    metadata:
+      labels:
+        app: pgw
+    spec:
+      imagePullSecrets:
+      - name: <registry_secret>
+      containers:
+      - name: pgw
+        image: <registry>.azurecr.io/pgw:0.1
+        ports:
+        - containerPort: 8883
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pgw
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8883
+  selector:
+    app: pgw

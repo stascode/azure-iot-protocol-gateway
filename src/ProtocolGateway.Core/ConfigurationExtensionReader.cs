@@ -7,7 +7,7 @@ namespace Microsoft.Azure.Devices.ProtocolGateway
 
     public class ConfigurationExtensionReader : IAppConfigReader
     {
-        static readonly IConfiguration Config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+        static readonly IConfiguration Config = new ConfigurationBuilder().AddJsonFile("appSettings.json").Build();
 
         public bool TryGetSetting(string name, out string value)
         {

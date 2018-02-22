@@ -16,10 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\shared\protocol-gateway.contoso.com.pfx" Link="protocol-gateway.contoso.com.pfx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\shared\key.pfx" Link="key.pfx">
+    <None Include="certs\key.pfx" Link="key.pfx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

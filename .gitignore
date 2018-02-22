@@ -30,3 +30,10 @@ nuget.exe
 *.lock.json
 *.db
 .idea.*/
+
+host/ProtocolGateway.Host.Docker.NetCore/appSettings.json
+host/ProtocolGateway.Host.Docker.NetCore/ProtocolGateway.K8s.yml
+host/ProtocolGateway.Host.Docker.NetCore/certs/*.pfx
+host/ProtocolGateway.Host.Docker.NetCore/certs/*.pem
+host/ProtocolGateway.Host.Docker.NetCore/certs/*.csr
+host/ProtocolGateway.Host.Docker.NetCore/out

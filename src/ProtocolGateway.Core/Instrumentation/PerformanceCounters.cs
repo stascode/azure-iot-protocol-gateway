@@ -3,7 +3,7 @@
 
 namespace Microsoft.Azure.Devices.ProtocolGateway.Instrumentation
 {
-#if !NETSTANDARD1_3
+#if !NETSTANDARD 
     using System.Diagnostics;
     using System.Collections.Generic;
 #endif
@@ -59,7 +59,7 @@ namespace Microsoft.Azure.Devices.ProtocolGateway.Instrumentation
 
         private static IPerformanceCounterManager GetPerformanceCounterManager()
         {
-#if NETSTANDARD1_3
+#if NETSTANDARD
             return new EmptyPerformanceCounterManager();
 #else
             return new Manager();
@@ -67,7 +67,7 @@ namespace Microsoft.Azure.Devices.ProtocolGateway.Instrumentation
 
         }
 
-#if !NETSTANDARD1_3
+#if !NETSTANDARD
         class Manager : WindowsPerformanceCounterManager
         {
             public Manager() : base(new Dictionary<PerformanceCounterCategoryInfo, CounterCreationData[]>
